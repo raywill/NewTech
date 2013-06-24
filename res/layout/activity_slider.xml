@@ -1,0 +1,20 @@
+<com.agimind.widget.SlideHolder
+    android:id ="@+id/slider"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Here is any view that will represent your side menu. Don't forget to provide width! -->
+    <!-- View 
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#AAAAAA"
+        /-->
+
+    <!-- And here is your main layout -->
+    <!-- View 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        /-->
+
+</com.agimind.widget.SlideHolder>
