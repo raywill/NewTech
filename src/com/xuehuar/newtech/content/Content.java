@@ -77,10 +77,10 @@ public class Content {
 			if (i == 0) {
 				String [] childNames = new String[]  { "课程目录", "学习课堂", "进度报告", "排行榜" };
 				int [] childIcons = new int[] {
-						R.drawable.passed,
-						R.drawable.passed,
-						R.drawable.passed,
-						R.drawable.desktop_icon_disscussion_v1_24					
+						R.drawable.content_done,
+						R.drawable.content_done,
+						R.drawable.content_done,
+						R.drawable.content_doing,					
 				};
 				List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 				for (int j = 0; j < childNames.length; j++)
@@ -95,10 +95,13 @@ public class Content {
 			} else {
 				List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("icon", R.drawable.not_passed);
-				map.put("name", "设置");
+				map.put("icon", R.drawable.content_todo);
+				map.put("name", "设置设置设置设置设置设置设置设置设置设置设置设置设置");
 				map.put("click", false);
 				list.add(map);
+				list.add(map);
+				list.add(map);
+				list.add(map);				
 				mChild.add(list);
 			}
 		}
