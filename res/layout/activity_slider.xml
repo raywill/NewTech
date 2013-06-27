@@ -1,4 +1,4 @@
-<com.agimind.widget.SlideHolder
+<com.agimind.widget.customize.SlideHolder
     android:id ="@+id/slider"
     android:layout_width="match_parent"
     android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
@@ -17,4 +17,4 @@
         android:background="#000000"
         /-->
 
-</com.agimind.widget.SlideHolder>
+</com.agimind.widget.customize.SlideHolder>

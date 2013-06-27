@@ -37,7 +37,7 @@ public class Welcome extends Activity {
 			public void onClick(View view) {
 				Intent intent = new Intent();
 				Welcome.this.startActivity(
-						new Intent(Welcome.this, RootActivity.class)
+						new Intent(Welcome.this, DesktopActivity.class)
 				);
 			}
 		});

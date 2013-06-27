@@ -1,0 +1,87 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:2924), pid=9340, tid=4352
+#  Error: ShouldNotReachHere()
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b19 mixed mode windows-x86)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x015a7800):  JavaThread "Unknown thread" [_thread_in_vm, id=4352, stack(0x00130000,0x00180000)]
+
+Stack: [0x00130000,0x00180000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x015a7800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4352, stack(0x00130000,0x00180000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00423000 	C:\Program Files\Java\jre1.6.0_04\bin\javaw.exe
+0x76de0000 - 0x76f1c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75f70000 - 0x76044000 	C:\Windows\system32\kernel32.dll
+0x74ca0000 - 0x74ceb000 	C:\Windows\system32\KERNELBASE.dll
+0x762f0000 - 0x76390000 	C:\Windows\system32\ADVAPI32.dll
+0x763c0000 - 0x7646c000 	C:\Windows\system32\msvcrt.dll
+0x765e0000 - 0x765f9000 	C:\Windows\SYSTEM32\sechost.dll
+0x76780000 - 0x76821000 	C:\Windows\system32\RPCRT4.dll
+0x76060000 - 0x76129000 	C:\Windows\system32\USER32.dll
+0x75f20000 - 0x75f6e000 	C:\Windows\system32\GDI32.dll
+0x763b0000 - 0x763ba000 	C:\Windows\system32\LPK.dll
+0x76f70000 - 0x7700d000 	C:\Windows\system32\USP10.dll
+0x76390000 - 0x763af000 	C:\Windows\system32\IMM32.DLL
+0x76680000 - 0x7674c000 	C:\Windows\system32\MSCTF.dll
+0x74b00000 - 0x74c1c000 	C:\Windows\system32\actuser.dll
+0x0f000000 - 0x0f006000 	C:\Windows\system32\acdetoured.dll
+0x74a30000 - 0x74a96000 	C:\Windows\system32\msvcp60.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre1.6.0_04\bin\msvcr71.dll
+0x6d7c0000 - 0x6da10000 	C:\Program Files\Java\jre1.6.0_04\bin\client\jvm.dll
+0x74ea0000 - 0x74ed2000 	C:\Windows\system32\WINMM.dll
+0x749c0000 - 0x74a0c000 	C:\Windows\system32\apphelp.dll
+0x6d270000 - 0x6d278000 	C:\Program Files\Java\jre1.6.0_04\bin\hpi.dll
+0x76470000 - 0x76475000 	C:\Windows\system32\PSAPI.DLL
+0x6d770000 - 0x6d77c000 	C:\Program Files\Java\jre1.6.0_04\bin\verify.dll
+0x6d310000 - 0x6d32f000 	C:\Program Files\Java\jre1.6.0_04\bin\java.dll
+0x6d7b0000 - 0x6d7bf000 	C:\Program Files\Java\jre1.6.0_04\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:C:\Users\raywill\android-sdks\platforms\android-16\android.jar 
+java_command: com.xuehuar.newtech.desktop.Snippet
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0
+CLASSPATH=C:\program files\STAF\samples\demo\STAFDemo.jar;C:\program files\STAF\bin\JSTAF.jar;C:\Program Files\Java\jdk1.7.0\lib\dt.jar;C:\Program Files\Java\jdk1.7.0\lib\tools.jar;C:\program files\STAF\samples\demo\STAFDemo.jar;C:\program files\STAF\bin\JSTAF.jar;.
+PATH=C:\program files\STAF\bin;C:\program files\STAF\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files\PHP\;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Program Files\Dell\DW WLAN Card;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Windows Live\Shared;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\Program Files\Java\jdk1.7.0\bin;C:\Program Files\flex4sdk\bin;D:\Python27;C:\Program Files\apache-maven-3.0.4\bin;C:\Program Files\SlikSvn\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Bitvise Tunnelier;C:\Program Files\Java\jdk1.7.0\bin;D:\GNUstep\bin;D:\GNUstep\GNUstep\System\Tools;C:\Users\raywill\Downloads\android-sdk-windows\tools
+USERNAME=raywill
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7601 Service Pack 1
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 2097151k(899604k free), swap 4194303k(2784204k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b19) for windows-x86 JRE (1.6.0_04-b12), built on Dec 14 2007 00:51:20 by "java_re" with MS VC++ 7.1
+
+time: Wed Jun 26 21:53:27 2013
+elapsed time: 0 seconds
+
