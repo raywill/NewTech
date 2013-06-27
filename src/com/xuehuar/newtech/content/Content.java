@@ -14,12 +14,13 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
 
 import com.xuehuar.newtech.MyApplication;
+import com.xuehuar.newtech.desktop.Desktop.OnChangeViewListener;
 import com.xuehuar.newtech.util.ViewUtil;
 
 public class Content {
 	
 	public interface OnChangeViewListener {
-		public abstract void onChangeView(int arg0);
+		public abstract void onChangeView(int chapter, int lesson);
 	}
 
 
@@ -58,52 +59,34 @@ public class Content {
 	}
 
 	private void initData() {
-
-		String[] mGroupName = new String[] {
-				"第1章",
-				"第2章",
-				"第3章",
-				"第4章",
-				"第5章",
-				"第6章",
-		};
-		for (int i = 0; i < mGroupName.length; i++) {
+		ContentResult content = new ContentResult();		
+		
+		for (int i = 0; i < content.mChapter.length; i++) {
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("name", mGroupName[i]);
+			map.put("name", content.mChapter[i].mChapterName);
 			mGroup.add(map);
 		}
 
-		for (int i = 0; i < mGroupName.length; i++) {
-			if (i == 0) {
-				String [] childNames = new String[]  { "课程目录", "学习课堂", "进度报告", "排行榜" };
-				int [] childIcons = new int[] {
-						R.drawable.content_done,
-						R.drawable.content_done,
-						R.drawable.content_done,
-						R.drawable.content_doing,					
+		for (int i = 0; i < content.mChapter.length; i++) {					
+			   int [] childIcons = new int[] {
+						R.drawable.content_todo,
+						R.drawable.content_doing,
+						R.drawable.content_done
 				};
 				List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-				for (int j = 0; j < childNames.length; j++)
+				for (int j = 0; j < content.mChapter[i].mLesson.length; j++)
 				{
 					Map<String, Object> map = new HashMap<String, Object>();
-					map.put("icon", childIcons[j]);
-					map.put("name", childNames[j]);
+					if (content.mChapter[i].mLesson[j].mStatus >= 0 && content.mChapter[i].mLesson[j].mStatus <=3) {
+						map.put("icon", childIcons[content.mChapter[i].mLesson[j].mStatus-1]);
+					} else {
+						map.put("icon", childIcons[0]);
+					}
+					map.put("name", content.mChapter[i].mLesson[j].mMaterialName);
 					map.put("click", false);
 					list.add(map);	
 				}
-				mChild.add(list);
-			} else {
-				List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("icon", R.drawable.content_todo);
-				map.put("name", "设置设置设置设置设置设置设置设置设置设置设置设置设置");
-				map.put("click", false);
-				list.add(map);
-				list.add(map);
-				list.add(map);
-				list.add(map);				
-				mChild.add(list);
-			}
+				mChild.add(list);			
 		}
 	}
 	
@@ -120,27 +103,34 @@ public class Content {
 		
 		mDisplay.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View view, int groupPosition, int childPosition, long id) {
-				
 				if (null == mOnChangeViewListener) {
 					return true;
 				}
-				
 				mChosedGroupId = groupPosition;
 				mChosedChildId = childPosition;
 				mAdapter.notifyDataSetChanged();
-				mOnChangeViewListener.onChangeView(ViewUtil.ContentView);
+				mOnChangeViewListener.onChangeView(mChosedGroupId,  mChosedChildId);
 				return true;				
 			}
 		});
 		
 	}
 
-	public void setOnChangeViewListener(OnChangeViewListener onChangeViewListener) {
-		mOnChangeViewListener = onChangeViewListener;
-	}
+ 
 	
 	public View getView() {		
 		return mContent;
 	}
 
+	public int getChapter() {
+		return mChosedGroupId;
+	}
+	public int getLesson() {
+		return mChosedChildId;
+	}
+
+	public void setOnChangeViewListener(
+			OnChangeViewListener onChangeViewListener) {
+		mOnChangeViewListener = onChangeViewListener;		
+	}
 }

@@ -9,6 +9,7 @@ import com.xuehuar.newtech.classroom.Classroom;
 import com.xuehuar.newtech.content.Content;
 import com.xuehuar.newtech.desktop.Desktop;
 import com.xuehuar.newtech.desktop.Desktop.OnChangeViewListener;
+import com.xuehuar.newtech.content.Content;
 import com.xuehuar.newtech.desktop.Playground;
 import com.xuehuar.newtech.util.ViewUtil;
 
@@ -55,7 +56,7 @@ public class DesktopActivity extends Activity {
 	}
 
 	private void initListener() {
-	       mDesktop.setOnChangeViewListener(new OnChangeViewListener() {
+	       mDesktop.setOnChangeViewListener(new Desktop.OnChangeViewListener() {
 				@Override
 				public void onChangeView(int postion) {
 					switch(postion) {
@@ -63,6 +64,7 @@ public class DesktopActivity extends Activity {
 						open(mContent.getView());
 						break;
 					case ViewUtil.ClassroomView:
+						mClassroom.setLesson(mContent.getChapter(), mContent.getLesson());
 						open(mClassroom.getView());
 						break;
 					default:
@@ -70,7 +72,14 @@ public class DesktopActivity extends Activity {
 						break;
 					}				
 				}	        
-	        });				
+	        });	
+	       mContent.setOnChangeViewListener(new Content.OnChangeViewListener() {
+				@Override
+				public void onChangeView(int chapter, int lesson) {
+						mClassroom.setLesson(chapter, lesson);
+						open(mClassroom.getView());
+				}	        
+	        });	
 	}
 
 	protected void open(View view) {
