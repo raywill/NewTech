@@ -34,6 +34,7 @@ public class Playground {
 	private View mPlayground = null;
 	private LinearLayout mLayout = null;
 	private OnChangeViewListener mOnChangeViewListener = null;
+	private View childView = null;
 	
 	public Playground(MyApplication application, Context context) {
 		this.mApplication = application;
@@ -65,7 +66,12 @@ public class Playground {
 
 	public void setChildView(View view) {
 		mLayout.removeAllViewsInLayout();
+		childView  = view;
 		mLayout.addView(view);		
+	}
+	
+	public View getChildView() {
+		return childView;
 	}
 
 }

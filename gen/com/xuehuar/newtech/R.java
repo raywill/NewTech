@@ -10,8 +10,7 @@ package com.xuehuar.newtech;
 public final class R {
     public static final class array {
         public static final int desktop_list_head_strings=0x7f040000;
-        public static final int desktop_list_item_action_strings=0x7f040002;
-        public static final int desktop_list_item_favorite_strings=0x7f040001;
+        public static final int reading_material=0x7f040001;
     }
     public static final class attr {
     }
@@ -55,6 +54,13 @@ public final class R {
         public static final int ic_launcher_old=0x7f02001f;
         public static final int not_passed=0x7f020020;
         public static final int passed=0x7f020021;
+        public static final int unit_background=0x7f020022;
+        public static final int unit_cover_doing=0x7f020023;
+        public static final int unit_cover_done=0x7f020024;
+        public static final int unit_cover_fail=0x7f020025;
+        public static final int unit_cover_pass=0x7f020026;
+        public static final int unit_cover_todo=0x7f020027;
+        public static final int unit_cover_todo3=0x7f020028;
     }
     public static final class id {
         public static final int content_list=0x7f090005;
@@ -70,11 +76,14 @@ public final class R {
         public static final int desktop_top_title=0x7f09000b;
         public static final int login_button=0x7f090002;
         public static final int material=0x7f090003;
-        public static final int menu_settings=0x7f090011;
+        public static final int menu_settings=0x7f090014;
         public static final int playground=0x7f090010;
         public static final int quiz=0x7f090004;
         public static final int register_button=0x7f090001;
         public static final int slider=0x7f090000;
+        public static final int unit_item_icon=0x7f090012;
+        public static final int unit_item_name=0x7f090013;
+        public static final int unit_list=0x7f090011;
     }
     public static final class layout {
         public static final int activity_slider=0x7f030000;
@@ -87,6 +96,8 @@ public final class R {
         public static final int desktop_list_child=0x7f030007;
         public static final int desktop_list_group=0x7f030008;
         public static final int playground=0x7f030009;
+        public static final int unit=0x7f03000a;
+        public static final int unit_item=0x7f03000b;
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;

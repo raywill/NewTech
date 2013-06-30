@@ -2,18 +2,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical" 
-    android:background ="#000000">
+    android:background ="#FFFFFFFF">
 
-    <TextView 
-        android:id = "@+id/material"
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text = "暑假哪里去?"
-        />
-    <TextView 
-        android:id = "@+id/quiz"
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text = "A. 回家   B. 旅游  C. 补习   D. 打工"
-        />
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical" 
+    android:background ="#FFFFFFFF">
+	    <TextView 
+	        android:id = "@+id/material"
+	        android:layout_width = "fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text = "暑假哪里去?"
+	        />
+	    <TextView 
+	        android:id = "@+id/quiz"
+	        android:layout_width = "fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text = "A. 回家   B. 旅游  C. 补习   D. 打工"
+	        />
+    </LinearLayout>
+        
 </LinearLayout>

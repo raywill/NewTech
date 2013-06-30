@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/unit_item_icon"
+	        android:layout_width = "120dip"
+	        android:layout_height = "120dip"
+	        android:scaleType="centerInside"
+			android:layout_gravity="center"	        
+		/>
+        <TextView
+            android:id="@+id/unit_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_gravity="center"
+            android:textColor="#00000000"
+            android:textSize="18sp" />        
+</LinearLayout>

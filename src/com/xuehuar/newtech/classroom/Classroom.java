@@ -9,8 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xuehuar.newtech.MyApplication;
+import com.xuehuar.newtech.MyData;
 import com.xuehuar.newtech.R;
-import com.xuehuar.newtech.content.ContentResult;
+import com.xuehuar.newtech.datasource.MaterialLibrary;
 
 public class Classroom {
 	// params
@@ -23,13 +24,14 @@ public class Classroom {
 	// data
 	private int mCurrentChapter = 0;
 	private int mCurrentLesson = 0;
-	private ContentResult mContentResult = null;
+	private int mCurrentUnit = 0;
+	private MaterialLibrary mLibrary = null;
 
 	public Classroom(MyApplication application, Context context) {
 		this.mApplication = application;
 		this.mContext = context;
 		mClassroom = LayoutInflater.from(context).inflate(R.layout.classroom, null);
-		mContentResult = new ContentResult();
+		mLibrary = MyData.getMaterialLibrary();
 		initView();
 		initListener();
 	}
@@ -53,15 +55,12 @@ public class Classroom {
 	}
 
 	private void updateView() {
-		mMaterialView.setText(mContentResult.mChapter[mCurrentChapter].mLesson[mCurrentLesson].mMaterial.mMaterial);		
+		mMaterialView.setText(
+				mLibrary.getMaterial(mCurrentUnit, 0)
+				);		
 	}
 
-	public void setLesson(int chapter, int lesson) {
-		if (chapter >= 0 && chapter < mContentResult.mChapter.length) {
-			if (lesson >= 0 && lesson < mContentResult.mChapter[chapter].mLesson.length) {
-				mCurrentLesson = lesson;
-				mCurrentChapter = chapter;
-			}				
-		}
-	}
+	public void setUnit(int unit) {
+		mCurrentUnit  = unit;
+	}	
 }
